@@ -1,0 +1,16 @@
+node_modules/
+output/
+build/
+dist/
+.idea/
+.DS_Store
+*.webm
+
+# Large assets — site uses optimized photos in public/assets/photos/web/
+public/assets/ref-bg.mp4
+public/assets/invite-video-only.mp4
+public/assets/invite.mp4
+public/assets/song.m4a
+public/assets/song_full.m4a
+public/assets/photos/*.JPG
+public/assets/template/

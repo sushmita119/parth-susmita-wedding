@@ -1,0 +1,15 @@
+{
+  "name": "parth-susmita-wedding-invite",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Wedding website — Parth & Susmita",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve public -l 3456",
+    "build:video": "node scripts/record.mjs",
+    "build:video:fast": "python3 scripts/render_fast.py"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}
