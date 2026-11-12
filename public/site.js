@@ -127,6 +127,7 @@ async function playMusic(fromLyrics = true) {
   if (fromLyrics) seekToLyrics();
   audio.volume = 0.55;
   try {
+    if (fromLyrics) seekToLyrics();
     await audio.play();
     if (fromLyrics) seekToLyrics();
     setMusicPlaying(true);

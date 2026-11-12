@@ -875,17 +875,19 @@ body.is-ready .music-fab {
   color: var(--gold);
 }
 
-.event__info--light .event__map {
-  color: var(--espresso);
-  border-bottom-color: var(--gold);
+.block--dark .event__info--light .event__map {
+  color: var(--ivory);
+  border-bottom-color: rgba(201, 184, 150, 0.85);
 }
 
-.event__info--light .event__map strong {
-  text-shadow: none;
+.block--dark .event__info--light .event__map strong {
+  font-weight: 700;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
-.event__info--light .event__map:hover {
-  color: var(--gold);
+.block--dark .event__info--light .event__map:hover {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
 }
 
 .event__copy {
