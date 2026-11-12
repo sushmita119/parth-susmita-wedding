@@ -3,290 +3,217 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Parth & Susmita — wedding celebrations in Siliguri, December 2026."
-    />
+    <meta name="description" content="Parth & Susmita — Wedding celebrations, Siliguri, December 2026." />
     <meta property="og:title" content="Parth & Susmita" />
-    <meta
-      property="og:description"
-      content="Join us for Haldi, Wedding & Reception — December 2026, Siliguri."
-    />
-    <meta property="og:image" content="assets/photos/web/victoria.jpg" />
-    <meta property="og:type" content="website" />
-    <title>Parth & Susmita · December 2026</title>
+    <meta property="og:description" content="Haldi · Wedding · Reception — December 2026" />
+    <meta property="og:image" content="assets/photos/web/cover-victoria.jpg" />
+    <title>Parth & Susmita · Wedding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Marcellus&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Italiana&family=Libre+Baskerville:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
-    <div class="petals" aria-hidden="true" id="petals"></div>
+    <div class="curtain" id="curtain" aria-hidden="false">
+      <div class="curtain__panel">
+        <p class="curtain__kicker">You&apos;re invited</p>
+        <h2 class="curtain__title">Parth <span>&amp;</span> Susmita</h2>
+        <p class="curtain__meta">December 2026 · Siliguri</p>
+        <button type="button" class="curtain__btn" id="enter-site">
+          Enter with music
+        </button>
+        <button type="button" class="curtain__link" id="enter-quiet">Enter quietly</button>
+      </div>
+    </div>
 
-    <header class="site-header" id="header">
-      <a class="logo" href="#home">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        Parth <span class="amp">&</span> Susmita
-      </a>
-      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav" aria-label="Main">
-        <a href="#home">Home</a>
-        <a href="#invitation">Invitation</a>
-        <a href="#timeline">Events</a>
-        <a href="#gallery">Gallery</a>
+    <audio id="bg-music" src="assets/audio/aaj-sajeya-lofi.m4a" loop preload="auto"></audio>
+
+    <button type="button" class="music-fab" id="music-fab" aria-label="Toggle music" aria-pressed="false">
+      <span class="music-fab__icon music-fab__icon--on" aria-hidden="true">♫</span>
+      <span class="music-fab__icon music-fab__icon--off" aria-hidden="true">♪</span>
+      <span class="music-fab__label">Aaj Sajeya · Lofi</span>
+    </button>
+
+    <header class="header" id="header">
+      <a class="header__brand" href="#cover">P &amp; S</a>
+      <nav class="header__nav" id="nav">
+        <a href="#cover">Home</a>
+        <a href="#details">Details</a>
+        <a href="#events">Events</a>
+        <a href="#moments">Moments</a>
         <a href="#venue">Venue</a>
       </nav>
+      <button type="button" class="header__menu" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <div class="hero__bg">
-          <img
-            class="hero__photo"
-            id="hero-photo"
-            src="assets/photos/web/victoria.jpg"
-            alt=""
-            width="1400"
-            height="1800"
-          />
-          <div class="hero__veil"></div>
+      <section class="cover" id="cover">
+        <img
+          class="cover__img"
+          id="cover-img"
+          src="assets/photos/web/cover-victoria.jpg"
+          alt="Parth and Susmita"
+          width="1600"
+          height="2000"
+          fetchpriority="high"
+        />
+        <div class="cover__shade"></div>
+        <div class="cover__inner">
+          <p class="cover__tag">Save the date</p>
+          <h1 class="cover__names">Parth <em>&amp;</em> Susmita</h1>
+          <p class="cover__line">are tying the knot</p>
+          <p class="cover__date">13 · December · 2026</p>
+          <p class="cover__city">Siliguri, West Bengal</p>
+          <div class="cover__countdown" id="countdown" aria-live="polite"></div>
         </div>
-
-        <div class="hero__frame" aria-hidden="true">
-          <svg class="hero__ornament hero__ornament--tl" viewBox="0 0 120 120" fill="none">
-            <path d="M0 40 C40 0 80 0 120 0" stroke="currentColor" stroke-width="1" />
-            <path d="M0 0 C0 40 0 80 40 120" stroke="currentColor" stroke-width="1" />
-            <circle cx="8" cy="8" r="3" fill="currentColor" />
-          </svg>
-          <svg class="hero__ornament hero__ornament--br" viewBox="0 0 120 120" fill="none">
-            <path d="M120 80 C80 120 40 120 0 120" stroke="currentColor" stroke-width="1" />
-            <path d="M120 120 C120 80 120 40 80 0" stroke="currentColor" stroke-width="1" />
-            <circle cx="112" cy="112" r="3" fill="currentColor" />
-          </svg>
-        </div>
-
-        <div class="hero__content">
-          <p class="hero__mantra reveal" data-delay="0">शुभ विवाह</p>
-          <p class="hero__eyebrow reveal" data-delay="1">Together with their families</p>
-          <h1 class="hero__title reveal" data-delay="2">
-            <span class="hero__name">Parth</span>
-            <span class="hero__amp" aria-hidden="true">
-              <svg viewBox="0 0 80 24" class="hero__divider">
-                <path d="M0 12h28M52 12h28M36 4v16" stroke="currentColor" stroke-width="1" fill="none" />
-                <circle cx="40" cy="12" r="4" stroke="currentColor" fill="none" />
-              </svg>
-            </span>
-            <span class="hero__name">Susmita</span>
-          </h1>
-          <p class="hero__sub reveal" data-delay="3">request the honour of your presence</p>
-          <p class="hero__date reveal" data-delay="4">13 December 2026 · Siliguri</p>
-          <div class="countdown reveal" id="countdown" data-delay="5" aria-live="polite"></div>
-          <a class="btn btn--gold reveal" data-delay="6" href="#invitation">Open invitation</a>
-        </div>
-
-        <a class="hero__scroll" href="#invitation" aria-label="Scroll down">
-          <span class="hero__scroll-line"></span>
-        </a>
+        <div class="cover__scroll" aria-hidden="true"></div>
       </section>
 
-      <section class="marquee-band" aria-hidden="true">
-        <div class="marquee">
-          <div class="marquee__track">
-            <span>Haldi · 12 Dec</span><span class="dot">◆</span>
-            <span>Wedding · 13 Dec</span><span class="dot">◆</span>
-            <span>Reception · 16 Dec</span><span class="dot">◆</span>
-            <span>Siliguri, West Bengal</span><span class="dot">◆</span>
-            <span>Haldi · 12 Dec</span><span class="dot">◆</span>
-            <span>Wedding · 13 Dec</span><span class="dot">◆</span>
-            <span>Reception · 16 Dec</span><span class="dot">◆</span>
-            <span>Siliguri, West Bengal</span><span class="dot">◆</span>
-          </div>
+      <section class="ribbon" aria-hidden="true">
+        <div class="ribbon__track">
+          <span>Haldi 12 Dec</span><span>◆</span><span>Wedding 13 Dec</span><span>◆</span>
+          <span>Reception 16 Dec</span><span>◆</span><span>Siliguri</span><span>◆</span>
+          <span>Haldi 12 Dec</span><span>◆</span><span>Wedding 13 Dec</span><span>◆</span>
+          <span>Reception 16 Dec</span><span>◆</span><span>Siliguri</span><span>◆</span>
         </div>
       </section>
 
-      <section class="invitation section" id="invitation" aria-labelledby="invite-title">
-        <div class="section-inner">
-          <header class="section-head reveal">
-            <p class="section-kicker">Save the date</p>
-            <h2 class="section-title" id="invite-title">Wedding invitation</h2>
-            <p class="section-lead">
-              With hearts full of joy, we invite you to bless our union and celebrate with us
-              across three unforgettable days in Siliguri.
-            </p>
-          </header>
-
-          <article class="invite-card reveal">
-            <div class="invite-card__border" aria-hidden="true"></div>
-            <div class="invite-card__inner">
-              <p class="invite-card__script">Mr. &amp; Mrs.</p>
-              <h3 class="invite-card__names">Parth <span>&amp;</span> Susmita</h3>
-              <p class="invite-card__body">
-                cordially invite you to join in the celebration of their marriage and the festivities
-                that follow.
+      <section class="block block--light" id="details">
+        <div class="wrap">
+          <div class="invite reveal">
+            <div class="invite__frame">
+              <p class="invite__top">Mr &amp; Mrs invite you to celebrate</p>
+              <h2 class="invite__names">Parth <span>&amp;</span> Susmita</h2>
+              <p class="invite__text">
+                With our families, we joyfully request the pleasure of your company as we begin our
+                forever — among the warmth of Siliguri and the people we love most.
               </p>
-              <ul class="invite-card__dates">
-                <li><strong>12 Dec</strong> Haldi</li>
-                <li><strong>13 Dec</strong> Wedding</li>
-                <li><strong>16 Dec</strong> Reception</li>
-              </ul>
-              <p class="invite-card__place">Siliguri · West Bengal</p>
+              <div class="invite__rule" aria-hidden="true"></div>
+              <p class="invite__blessing">शुभ विवाह</p>
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section class="story section section--dark">
-        <div class="story__layout section-inner">
-          <figure class="story__visual reveal">
-            <div class="story__img-wrap">
-              <img src="assets/photos/web/haldi.jpg" alt="Haldi ceremony" loading="lazy" />
-            </div>
-            <figcaption class="story__caption">Golden mornings, laughter-filled rituals</figcaption>
-          </figure>
-          <div class="story__copy reveal">
-            <p class="section-kicker section-kicker--light">Our story</p>
-            <h2 class="story__heading">Two hearts, one celebration</h2>
-            <p class="story__text">
-              From quiet hill-town evenings to the promise of forever — our wedding is not just a
-              ceremony, but a gathering of every person who shaped our journey. Your presence is our
-              greatest gift.
-            </p>
-            <blockquote class="story__quote">
-              <p>“In your light, we learn how to love.”</p>
-            </blockquote>
+      <section class="block block--dark" id="events">
+        <div class="wrap">
+          <header class="head reveal">
+            <p class="head__kicker">The celebration</p>
+            <h2 class="head__title">Wedding weekend</h2>
+          </header>
+
+          <div class="events">
+            <article class="event reveal">
+              <div class="event__visual">
+                <img src="assets/photos/web/haldi.jpg" alt="Haldi ceremony" loading="lazy" />
+              </div>
+              <div class="event__info">
+                <p class="event__index">I</p>
+                <h3 class="event__name">Haldi</h3>
+                <p class="event__when">Friday, 12 December 2026</p>
+                <p class="event__copy">
+                  A morning dipped in gold — turmeric, blessings, and laughter with those closest
+                  to us.
+                </p>
+              </div>
+            </article>
+
+            <article class="event event--hero reveal">
+              <div class="event__visual event__visual--tall">
+                <img
+                  src="assets/photos/web/wedding-ghat.jpg"
+                  alt="Wedding day — Parth and Susmita"
+                  loading="lazy"
+                />
+                <span class="event__badge">Wedding day</span>
+              </div>
+              <div class="event__info event__info--light">
+                <p class="event__index">II</p>
+                <h3 class="event__name">Wedding</h3>
+                <p class="event__when">Saturday, 13 December 2026</p>
+                <p class="event__copy">
+                  Sacred vows, sacred promises — the day we choose each other, in front of everyone
+                  who shaped our story.
+                </p>
+              </div>
+            </article>
+
+            <article class="event reveal">
+              <div class="event__visual">
+                <img src="assets/photos/web/ghat8.jpg" alt="Reception evening" loading="lazy" />
+              </div>
+              <div class="event__info">
+                <p class="event__index">III</p>
+                <h3 class="event__name">Reception</h3>
+                <p class="event__when">Tuesday, 16 December 2026</p>
+                <p class="event__copy">
+                  An evening of music, gratitude, and dance — raising a glass to new beginnings.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="timeline section" id="timeline" aria-labelledby="timeline-title">
-        <div class="section-inner">
-          <header class="section-head reveal">
-            <p class="section-kicker">The festivities</p>
-            <h2 class="section-title" id="timeline-title">Three days of joy</h2>
-          </header>
-
-          <ol class="timeline-list">
-            <li class="timeline-item reveal">
-              <span class="timeline-item__marker" aria-hidden="true">01</span>
-              <div class="timeline-item__card">
-                <div class="timeline-item__thumb">
-                  <img src="assets/photos/web/haldi.jpg" alt="" loading="lazy" />
-                </div>
-                <div class="timeline-item__body">
-                  <p class="timeline-item__when">Friday · 12 December 2026</p>
-                  <h3 class="timeline-item__name">Haldi</h3>
-                  <p class="timeline-item__desc">
-                    Turmeric, blessings, and the brightest shades of yellow. An intimate morning of
-                    colour and cheer with family.
-                  </p>
-                  <span class="timeline-item__tag">Vibrant · Traditional</span>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-item reveal">
-              <span class="timeline-item__marker" aria-hidden="true">02</span>
-              <div class="timeline-item__card timeline-item__card--featured">
-                <div class="timeline-item__thumb">
-                  <img src="assets/photos/web/victoria.jpg" alt="" loading="lazy" />
-                </div>
-                <div class="timeline-item__body">
-                  <p class="timeline-item__when">Saturday · 13 December 2026</p>
-                  <h3 class="timeline-item__name">Wedding</h3>
-                  <p class="timeline-item__desc">
-                    Sacred vows, garlands, and the moment we begin forever — surrounded by everyone we
-                    love.
-                  </p>
-                  <span class="timeline-item__tag">Ceremony · Celebration</span>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-item reveal">
-              <span class="timeline-item__marker" aria-hidden="true">03</span>
-              <div class="timeline-item__card">
-                <div class="timeline-item__thumb">
-                  <img src="assets/photos/web/ghat8.jpg" alt="" loading="lazy" />
-                </div>
-                <div class="timeline-item__body">
-                  <p class="timeline-item__when">Tuesday · 16 December 2026</p>
-                  <h3 class="timeline-item__name">Reception</h3>
-                  <p class="timeline-item__desc">
-                    Music, dance, and a grand evening of gratitude — raising a toast to new
-                    beginnings.
-                  </p>
-                  <span class="timeline-item__tag">Evening · Festive</span>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="gallery section section--cream" id="gallery" aria-labelledby="gallery-title">
-        <div class="section-inner">
-          <header class="section-head reveal">
-            <p class="section-kicker">Captured joy</p>
-            <h2 class="section-title" id="gallery-title">Gallery</h2>
+      <section class="block block--olive" id="moments">
+        <div class="wrap">
+          <header class="head head--light reveal">
+            <p class="head__kicker">Captured moments</p>
+            <h2 class="head__title">Our gallery</h2>
           </header>
         </div>
-        <div class="gallery-rail reveal">
-          <figure class="gallery-slide gallery-slide--wide">
-            <img src="assets/photos/web/victoria.jpg" alt="Wedding portrait" loading="lazy" />
-            <figcaption>Wedding</figcaption>
+        <div class="mosaic reveal">
+          <figure class="mosaic__item mosaic__item--cover">
+            <img src="assets/photos/web/cover-victoria.jpg" alt="" loading="lazy" />
           </figure>
-          <figure class="gallery-slide">
-            <img src="assets/photos/web/haldi.jpg" alt="Haldi" loading="lazy" />
-            <figcaption>Haldi</figcaption>
+          <figure class="mosaic__item">
+            <img src="assets/photos/web/wedding-ghat.jpg" alt="" loading="lazy" />
           </figure>
-          <figure class="gallery-slide">
-            <img src="assets/photos/web/ghat8.jpg" alt="Reception" loading="lazy" />
-            <figcaption>Reception</figcaption>
+          <figure class="mosaic__item mosaic__item--tall">
+            <img src="assets/photos/web/haldi.jpg" alt="" loading="lazy" />
           </figure>
-          <figure class="gallery-slide gallery-slide--tall">
-            <img src="assets/photos/web/victoria.jpg" alt="" loading="lazy" />
-            <figcaption>Together</figcaption>
+          <figure class="mosaic__item">
+            <img src="assets/photos/web/ghat8.jpg" alt="" loading="lazy" />
           </figure>
         </div>
       </section>
 
-      <section class="venue section" id="venue" aria-labelledby="venue-title">
-        <div class="venue-card section-inner reveal">
-          <div class="venue-card__map" aria-hidden="true">
-            <div class="venue-card__map-inner">
-              <span class="venue-card__pin">✦</span>
+      <section class="block block--light" id="venue">
+        <div class="wrap">
+          <div class="venue reveal">
+            <div class="venue__copy">
+              <p class="head__kicker">Location</p>
+              <h2 class="venue__title">Siliguri</h2>
+              <p class="venue__sub">West Bengal, India</p>
+              <p class="venue__text">
+                Venue addresses and timings will be shared with guests personally. We cannot wait to
+                welcome you to our hometown in the foothills of the Himalayas.
+              </p>
+              <a
+                class="btn"
+                href="https://www.google.com/maps/search/Siliguri,+West+Bengal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Maps
+              </a>
             </div>
-          </div>
-          <div class="venue-card__content">
-            <p class="section-kicker">Where</p>
-            <h2 class="venue-card__title" id="venue-title">Siliguri</h2>
-            <p class="venue-card__region">West Bengal, India</p>
-            <p class="venue-card__note">
-              Exact venue addresses and timings will be shared personally with invited guests. The
-              city welcomes you with tea gardens, mountain air, and warmth.
-            </p>
-            <a
-              class="btn btn--outline"
-              href="https://www.google.com/maps/search/Siliguri,+West+Bengal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on Google Maps
-            </a>
+            <div class="venue__visual" aria-hidden="true">
+              <img src="assets/photos/web/wedding-ghat.jpg" alt="" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-ornament" aria-hidden="true">❧</div>
-      <p class="footer-script">Parth &amp; Susmita</p>
-      <p class="footer-date">December 2026</p>
-      <p class="footer-note">With love — thank you for being part of our story</p>
+    <footer class="footer">
+      <p class="footer__script">Parth &amp; Susmita</p>
+      <p class="footer__year">December 2026</p>
     </footer>
 
     <script src="site.js" type="module"></script>
