@@ -101,8 +101,11 @@ function setMusicPlaying(playing) {
   musicFab.setAttribute('aria-pressed', String(playing));
 }
 
-async function playMusic() {
+async function playMusic(fromStart = true) {
   if (!audio) return false;
+  if (fromStart) {
+    audio.currentTime = 0;
+  }
   audio.volume = 0.55;
   try {
     await audio.play();
@@ -126,7 +129,7 @@ function dismissCurtain(withMusic) {
     curtain.classList.add('is-hidden');
     curtain.setAttribute('aria-hidden', 'true');
   }
-  if (withMusic) void playMusic();
+  if (withMusic) void playMusic(true);
   else setMusicPlaying(false);
 }
 
@@ -135,8 +138,11 @@ enterQuiet?.addEventListener('click', () => dismissCurtain(false));
 
 musicFab?.addEventListener('click', async () => {
   if (!audio) return;
-  if (audio.paused) await playMusic();
-  else stopMusic();
+  if (audio.paused) {
+    await playMusic(true);
+    return;
+  }
+  stopMusic();
 });
 
 initCountdown();
