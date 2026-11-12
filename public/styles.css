@@ -112,7 +112,7 @@ a {
   display: block;
   width: 100%;
   max-width: 280px;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto;
   padding: 1rem 1.5rem;
   border: 1px solid var(--gold);
   background: linear-gradient(135deg, var(--gold), var(--champagne));
@@ -842,19 +842,33 @@ body.is-ready .music-fab {
 
 .event__map {
   display: inline-block;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0;
   font-family: var(--font-display);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--champagne);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color 0.2s;
+  font-size: clamp(0.92rem, 2.4vw, 1.08rem);
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.35;
+  color: var(--ivory);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(201, 184, 150, 0.85);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.event__map strong {
+  font-weight: 700;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 .event__map:hover {
-  color: var(--ivory);
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+.event__map:hover strong {
+  text-shadow: none;
 }
 
 .event__info--light .event__when {
@@ -862,7 +876,16 @@ body.is-ready .music-fab {
 }
 
 .event__info--light .event__map {
-  color: var(--brown-soft);
+  color: var(--espresso);
+  border-bottom-color: var(--gold);
+}
+
+.event__info--light .event__map strong {
+  text-shadow: none;
+}
+
+.event__info--light .event__map:hover {
+  color: var(--gold);
 }
 
 .event__copy {

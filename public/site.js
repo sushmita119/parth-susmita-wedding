@@ -5,7 +5,6 @@ const audio = document.getElementById('bg-music');
 const LYRICS_OFFSET_SEC = audio ? Number.parseFloat(audio.dataset.lyricsOffset || '0') : 0;
 const curtain = document.getElementById('curtain');
 const enterSite = document.getElementById('enter-site');
-const enterQuiet = document.getElementById('enter-quiet');
 const musicFab = document.getElementById('music-fab');
 const header = document.getElementById('header');
 const coverImg = document.getElementById('cover-img');
@@ -155,7 +154,6 @@ function dismissCurtain(withMusic) {
 }
 
 enterSite?.addEventListener('click', () => dismissCurtain(true));
-enterQuiet?.addEventListener('click', () => dismissCurtain(false));
 
 musicFab?.addEventListener('click', async () => {
   if (!audio) return;
