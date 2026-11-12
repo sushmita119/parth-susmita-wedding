@@ -1,13 +1,34 @@
 const WEDDING_UTC = Date.UTC(2026, 11, 13, 5, 30, 0);
 
 const audio = document.getElementById('bg-music');
-const MUSIC_START_SEC = audio ? Number.parseFloat(audio.dataset.start || '0') : 0;
+/** In-file seek (0 when audio file is pre-trimmed to the lyric). */
+const LYRICS_OFFSET_SEC = audio ? Number.parseFloat(audio.dataset.lyricsOffset || '0') : 0;
 const curtain = document.getElementById('curtain');
 const enterSite = document.getElementById('enter-site');
 const enterQuiet = document.getElementById('enter-quiet');
 const musicFab = document.getElementById('music-fab');
 const header = document.getElementById('header');
 const coverImg = document.getElementById('cover-img');
+
+function seekToLyrics() {
+  if (!audio || !Number.isFinite(LYRICS_OFFSET_SEC)) return;
+  if (LYRICS_OFFSET_SEC <= 0) {
+    audio.currentTime = 0;
+    return;
+  }
+  audio.currentTime = LYRICS_OFFSET_SEC;
+}
+
+function initMusicLoopGuard() {
+  if (!audio || LYRICS_OFFSET_SEC <= 0) return;
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.paused || audio.seeking) return;
+    if (audio.currentTime < LYRICS_OFFSET_SEC - 0.35) {
+      audio.currentTime = LYRICS_OFFSET_SEC;
+    }
+  });
+}
 
 function initCountdown() {
   const root = document.getElementById('countdown');
@@ -90,7 +111,7 @@ function initParallax() {
       const rect = cover.getBoundingClientRect();
       if (rect.bottom < 0) return;
       const p = Math.max(0, -rect.top) / (cover.offsetHeight || 1);
-      coverImg.style.transform = `scale(${1.03 + p * 0.1}) translateY(${p * 30}px)`;
+      coverImg.style.transform = `scale(${1 + p * 0.06}) translateY(${p * 24}px)`;
     },
     { passive: true }
   );
@@ -102,14 +123,13 @@ function setMusicPlaying(playing) {
   musicFab.setAttribute('aria-pressed', String(playing));
 }
 
-async function playMusic(fromStart = true) {
+async function playMusic(fromLyrics = true) {
   if (!audio) return false;
-  if (fromStart) {
-    audio.currentTime = Number.isFinite(MUSIC_START_SEC) ? MUSIC_START_SEC : 0;
-  }
+  if (fromLyrics) seekToLyrics();
   audio.volume = 0.55;
   try {
     await audio.play();
+    if (fromLyrics) seekToLyrics();
     setMusicPlaying(true);
     return true;
   } catch {
@@ -139,13 +159,11 @@ enterQuiet?.addEventListener('click', () => dismissCurtain(false));
 
 musicFab?.addEventListener('click', async () => {
   if (!audio) return;
-  if (audio.paused) {
-    await playMusic(true);
-    return;
-  }
-  stopMusic();
+  if (audio.paused) await playMusic(true);
+  else stopMusic();
 });
 
+initMusicLoopGuard();
 initCountdown();
 initReveal();
 initNav();
