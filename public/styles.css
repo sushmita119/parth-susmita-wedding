@@ -352,17 +352,28 @@ body.is-ready .music-fab {
 
 .cover__date {
   font-family: var(--font-display);
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-  letter-spacing: 0.25em;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-top: 1.25rem;
-  color: var(--gold-light);
+  color: var(--ivory);
+}
+
+.cover__date strong,
+.cover__city strong {
+  font-weight: 700;
+  text-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.75),
+    0 0 1px rgba(0, 0, 0, 0.9);
 }
 
 .cover__city {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-top: 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(0.88rem, 2.2vw, 1rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  color: var(--gold-light);
 }
 
 .cover__countdown {
@@ -374,28 +385,31 @@ body.is-ready .music-fab {
 }
 
 .countdown-item {
-  min-width: 4.25rem;
-  padding: 0.75rem 0.5rem;
-  border: 1px solid rgba(201, 184, 150, 0.45);
-  background: rgba(20, 16, 14, 0.35);
-  backdrop-filter: blur(8px);
+  min-width: 4.5rem;
+  padding: 0.85rem 0.55rem;
+  border: 1px solid rgba(201, 184, 150, 0.65);
+  background: rgba(20, 16, 14, 0.72);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .countdown-item strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.65rem;
+  font-weight: 700;
   line-height: 1;
+  color: var(--ivory);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .countdown-item span {
   display: block;
-  margin-top: 0.3rem;
-  font-size: 0.55rem;
+  margin-top: 0.35rem;
+  font-size: 0.58rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0.75;
+  color: var(--gold-light);
 }
 
 .cover__scroll {
@@ -815,11 +829,40 @@ body.is-ready .music-fab {
 
 .event__when {
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: clamp(0.82rem, 2vw, 0.95rem);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 1rem;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.event__when strong {
+  font-weight: 700;
+}
+
+.event__map {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.event__map:hover {
+  color: var(--ivory);
+}
+
+.event__info--light .event__when {
+  color: var(--gold);
+}
+
+.event__info--light .event__map {
+  color: var(--brown-soft);
 }
 
 .event__copy {
