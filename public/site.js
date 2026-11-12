@@ -163,6 +163,13 @@ musicFab?.addEventListener('click', async () => {
   else stopMusic();
 });
 
+if (audio) {
+  audio.addEventListener('loadedmetadata', () => {
+    if (!audio.paused) return;
+    seekToLyrics();
+  });
+}
+
 initMusicLoopGuard();
 initCountdown();
 initReveal();
