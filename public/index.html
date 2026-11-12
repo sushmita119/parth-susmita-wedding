@@ -29,7 +29,13 @@
       </div>
     </div>
 
-    <audio id="bg-music" src="assets/audio/aaj-sajeya-lofi.m4a" loop preload="auto"></audio>
+    <audio
+      id="bg-music"
+      src="assets/audio/aaj-sajeya-lofi.m4a"
+      loop
+      preload="auto"
+      data-start="0"
+    ></audio>
 
     <button type="button" class="music-fab" id="music-fab" aria-label="Toggle music" aria-pressed="false">
       <span class="music-fab__icon music-fab__icon--on" aria-hidden="true">♫</span>
@@ -97,53 +103,6 @@
               <div class="invite__rule" aria-hidden="true"></div>
               <p class="invite__blessing">शुभ विवाह</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="block block--beige" id="origins" aria-labelledby="origins-title">
-        <div class="wrap">
-          <header class="head reveal">
-            <p class="head__kicker head__kicker--brown">Where it began</p>
-            <h2 class="head__title head__title--brown" id="origins-title">How it started</h2>
-            <p class="origins__lead reveal">
-              Before the vows and the celebrations — two ordinary moments that quietly became ours.
-              These are the memories of how it all started.
-            </p>
-          </header>
-
-          <div class="origins reveal">
-            <figure class="origins__card origins__card--left">
-              <div class="origins__frame">
-                <img
-                  src="assets/photos/web/memory-start-1.jpg"
-                  alt="Early memory — how our story started"
-                  loading="lazy"
-                  width="800"
-                  height="800"
-                />
-              </div>
-              <figcaption class="origins__caption">The beginning</figcaption>
-            </figure>
-
-            <div class="origins__bridge" aria-hidden="true">
-              <span class="origins__line"></span>
-              <span class="origins__glyph">♡</span>
-              <span class="origins__line"></span>
-            </div>
-
-            <figure class="origins__card origins__card--right">
-              <div class="origins__frame">
-                <img
-                  src="assets/photos/web/memory-start-2.jpg"
-                  alt="Another early memory together"
-                  loading="lazy"
-                  width="800"
-                  height="800"
-                />
-              </div>
-              <figcaption class="origins__caption">And then us</figcaption>
-            </figure>
           </div>
         </div>
       </section>
@@ -255,6 +214,63 @@
               <img src="assets/photos/web/wedding-ghat.jpg" alt="" loading="lazy" />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="finale" id="origins" aria-labelledby="origins-title">
+        <div class="finale__glow" aria-hidden="true"></div>
+        <div class="wrap finale__wrap">
+          <header class="finale__head reveal">
+            <p class="finale__eyebrow">Before the forever</p>
+            <h2 class="finale__title" id="origins-title">How it started</h2>
+            <p class="finale__quote">
+              Two small moments — a glance, a laugh — and quietly, everything changed.
+            </p>
+          </header>
+
+          <div class="finale__timeline reveal">
+            <figure class="memory">
+              <div class="memory__img">
+                <img
+                  src="assets/photos/web/memory-start-1.jpg"
+                  alt="Where our story began"
+                  loading="lazy"
+                  width="320"
+                  height="400"
+                />
+              </div>
+              <figcaption class="memory__label">
+                <span class="memory__num">01</span>
+                The beginning
+              </figcaption>
+            </figure>
+
+            <div class="finale__path" aria-hidden="true">
+              <span class="finale__dot"></span>
+              <span class="finale__thread"></span>
+              <span class="finale__heart">♡</span>
+              <span class="finale__thread"></span>
+              <span class="finale__dot"></span>
+            </div>
+
+            <figure class="memory memory--alt">
+              <div class="memory__img">
+                <img
+                  src="assets/photos/web/memory-start-2.jpg"
+                  alt="Early days together"
+                  loading="lazy"
+                  width="320"
+                  height="400"
+                />
+              </div>
+              <figcaption class="memory__label">
+                <span class="memory__num">02</span>
+                And then us
+              </figcaption>
+            </figure>
+          </div>
+
+          <p class="finale__closing reveal">…and the rest is our favourite story.</p>
         </div>
       </section>
     </main>

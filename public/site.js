@@ -1,6 +1,7 @@
 const WEDDING_UTC = Date.UTC(2026, 11, 13, 5, 30, 0);
 
 const audio = document.getElementById('bg-music');
+const MUSIC_START_SEC = audio ? Number.parseFloat(audio.dataset.start || '0') : 0;
 const curtain = document.getElementById('curtain');
 const enterSite = document.getElementById('enter-site');
 const enterQuiet = document.getElementById('enter-quiet');
@@ -104,7 +105,7 @@ function setMusicPlaying(playing) {
 async function playMusic(fromStart = true) {
   if (!audio) return false;
   if (fromStart) {
-    audio.currentTime = 0;
+    audio.currentTime = Number.isFinite(MUSIC_START_SEC) ? MUSIC_START_SEC : 0;
   }
   audio.volume = 0.55;
   try {
