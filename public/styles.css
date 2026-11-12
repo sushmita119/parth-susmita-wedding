@@ -289,10 +289,10 @@ body.is-ready .music-fab {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 28%;
+  object-position: center center;
   transform: scale(1);
   will-change: transform;
-  filter: contrast(1.05) saturate(1.08);
+  filter: contrast(1.04) saturate(1.05);
 }
 
 .cover__shade {
