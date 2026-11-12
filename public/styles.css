@@ -129,17 +129,6 @@ a {
   transform: translateY(-2px);
 }
 
-.curtain__link {
-  background: none;
-  border: none;
-  color: rgba(248, 245, 239, 0.55);
-  font-family: var(--font-serif);
-  font-size: 0.85rem;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  cursor: pointer;
-}
-
 /* Music */
 .music-fab {
   position: fixed;
