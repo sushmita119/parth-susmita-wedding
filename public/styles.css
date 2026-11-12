@@ -452,6 +452,11 @@ body.is-ready .music-fab {
   color: var(--ivory);
 }
 
+.block--beige {
+  background: linear-gradient(180deg, var(--beige) 0%, var(--beige-deep) 100%);
+  color: var(--brown);
+}
+
 .wrap {
   max-width: 1100px;
   margin: 0 auto;
@@ -548,6 +553,131 @@ body.is-ready .music-fab {
   font-size: clamp(2.5rem, 7vw, 3.75rem);
   font-weight: 400;
   line-height: 1.05;
+}
+
+.head__kicker--brown {
+  color: var(--olive);
+}
+
+.head__title--brown {
+  color: var(--brown);
+}
+
+/* How it started */
+.origins__lead {
+  max-width: 34rem;
+  margin: 1.25rem auto 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  color: var(--brown-soft);
+  line-height: 1.85;
+  text-align: center;
+}
+
+.origins {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 800px) {
+  .origins {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.origins__card {
+  margin: 0;
+  flex: 1;
+  max-width: 360px;
+  text-align: center;
+}
+
+.origins__card--left {
+  transform: rotate(-2deg);
+}
+
+.origins__card--right {
+  transform: rotate(2deg);
+}
+
+@media (min-width: 800px) {
+  .origins__card--left {
+    margin-top: 1.5rem;
+  }
+
+  .origins__card--right {
+    margin-top: 0;
+  }
+}
+
+.origins__frame {
+  padding: 0.65rem 0.65rem 2.25rem;
+  background: var(--ivory);
+  border: 1px solid rgba(184, 148, 95, 0.45);
+  box-shadow: var(--shadow);
+  transition: transform 0.5s var(--ease);
+}
+
+.origins__card:hover .origins__frame {
+  transform: scale(1.02) rotate(0deg);
+}
+
+.origins__frame img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--beige-deep);
+}
+
+.origins__caption {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown-soft);
+}
+
+.origins__bridge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 800px) {
+  .origins__bridge {
+    flex-direction: column;
+    padding: 4rem 0 0;
+  }
+}
+
+.origins__line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@media (min-width: 800px) {
+  .origins__line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(180deg, transparent, var(--gold), transparent);
+  }
+}
+
+.origins__glyph {
+  font-size: 1.25rem;
+  opacity: 0.85;
 }
 
 /* Events */
