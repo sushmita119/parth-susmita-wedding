@@ -108,7 +108,8 @@ a {
   margin-bottom: 2.5rem;
 }
 
-.curtain__btn {
+.curtain__btn,
+.location-btn {
   display: block;
   width: 100%;
   max-width: 280px;
@@ -125,7 +126,16 @@ a {
   transition: transform 0.25s;
 }
 
-.curtain__btn:hover {
+.location-btn {
+  display: inline-block;
+  width: auto;
+  margin: 0 0 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+.curtain__btn:hover,
+.location-btn:hover {
   transform: translateY(-2px);
 }
 
