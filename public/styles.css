@@ -1024,6 +1024,7 @@ body.is-ready .music-fab {
   font-family: var(--font-script);
   font-size: 3rem;
   color: var(--brown);
+  margin-bottom: 1.25rem;
 }
 
 .venue__sub {
