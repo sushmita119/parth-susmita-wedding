@@ -839,6 +839,21 @@ body.is-ready .music-fab {
   font-weight: 700;
 }
 
+.event__where {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.6vw, 1.15rem);
+  color: var(--ivory);
+  margin-bottom: 0.85rem;
+}
+
+.event__where strong {
+  font-weight: 600;
+}
+
+.event__info--light .event__where {
+  color: var(--brown);
+}
+
 .event__map {
   display: inline-block;
   margin-bottom: 1rem;
